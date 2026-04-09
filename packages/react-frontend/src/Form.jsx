@@ -1,7 +1,7 @@
 // src/Form.jsx
 import React, { useState } from "react";
 
-function Form() {
+function Form(props) {
     const [person, setPerson] = useState({
         name: "",
         job: ""
@@ -12,6 +12,11 @@ function Form() {
         if (name === "job")
             setPerson({ name: person["name"], job: value });
         else setPerson({ name: value, job: person["job"] });
+    }
+
+    function submitForm() {
+        props.handleSubmit(person);
+        setPerson({ name: "", job: "" });
     }
 
     return (
@@ -32,6 +37,10 @@ function Form() {
                 value={person.job}
                 onChange={handleChange}
             />
+
+            {/*using an onClick instead of an onSubmit since we’re not using the standard submit functionality
+            (i.e., we’re not sending the form to a backend component over the network)*/}
+            <input type="button" value="Submit" onClick={submitForm} />
         </form>
     );
 }

@@ -6,11 +6,17 @@ import Form from "./Form";
 function MyApp() {
     const [characters, setCharacters] = useState([]);
 
+    //
     function removeOneCharacter(index) {
         const updated = characters.filter((character, i) => {
             return i !== index;
         });
         setCharacters(updated);
+    }
+
+    //Update the list
+    function updateList(person) {
+        setCharacters([...characters, person]);
     }
 
     return (
@@ -19,7 +25,9 @@ function MyApp() {
                 characterData={characters}
                 removeCharacter={removeOneCharacter}
             />
-            <Form />
+            <Form
+                handleSubmit={updateList}       //handles submitForm() from Form.jsx (passed through props)
+            />
         </div>
     );
 }
