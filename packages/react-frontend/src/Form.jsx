@@ -41,6 +41,7 @@ function Form(props) {
             {/*using an onClick instead of an onSubmit since we’re not using the standard submit functionality
             (i.e., we’re not sending the form to a backend component over the network)*/}
             <input type="button" value="Submit" onClick={submitForm} />
+            
         </form>
     );
 }
