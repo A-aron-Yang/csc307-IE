@@ -7,6 +7,7 @@ function TableHeader() {
         <tr>
             <th>Name</th>
             <th>Job</th>
+            <th>Remove</th>
         </tr>
         </thead>
     );
@@ -39,7 +40,7 @@ function Table(props) {
         <table>
             <TableHeader />
             <TableBody
-                charaterData={props.charaterData}
+                characterData={props.characterData}
                 removeCharacter={props.removeCharacter}
             />
         </table>

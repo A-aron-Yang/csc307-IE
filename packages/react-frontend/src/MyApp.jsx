@@ -1,7 +1,6 @@
 // src/MyApp.jsx
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Table from "./Table";
-
 
 function MyApp() {
     const [characters, setCharacters] = useState([
@@ -39,4 +38,5 @@ function MyApp() {
         </div>
     );
 }
-export default MyApp;   //allows export
+
+export default MyApp;
